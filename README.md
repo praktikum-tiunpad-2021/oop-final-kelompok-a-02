@@ -10,7 +10,7 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
 | NPM           | Name        |
 | ------------- |-------------|
 | 140810200017  | M Keenan    |
-| 140810xx00xx  | Adnan R M   |
+| 140810200029  | Adnan R M   |
 |               |             |
 
 ## Change log
