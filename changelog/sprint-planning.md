@@ -4,9 +4,9 @@
 ### Team (Insert your name)
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810200017  | M Keenan    |
+| 140810xx00xx  | Adnan R M   |
+|               |             |
 
 ## Sprint Backlog Keseluruhan 
 | ID  | Title/Desc | Asignee | 
