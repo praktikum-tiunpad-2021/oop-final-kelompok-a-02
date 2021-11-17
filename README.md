@@ -4,18 +4,18 @@ This repository is a final project (Java GUI) from Object-Oriented Programming C
 
 [Challenge Guidelines](challenge-guideline.md)
 
-**Please create a description for this project here**
+Projek membuat game Fifteen Puzzle menggunakan OOP Java
 
 ## Credits
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810200017  | M Keenan    |
+| 140810xx00xx  | Adnan R M   |
+|               |             |
 
 ## Change log
 - **[Sprint Planning](changelog/sprint-planning.md) - (planning date)** 
-   -  Short changes 1
+   - Short changes 1
    - Short changes 2
 
 - **[Sprint 1](changelog/sprint-1.md) - (date from x until x)** 
