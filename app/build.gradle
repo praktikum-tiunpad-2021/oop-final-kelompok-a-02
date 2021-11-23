@@ -27,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'application.App'
+    mainClass = 'Puzzle.App'
 }
 
 tasks.named('test') {

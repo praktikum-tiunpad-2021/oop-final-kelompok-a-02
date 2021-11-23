@@ -4,10 +4,11 @@
 package application;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import Puzzle.App;
+
 
 class AppTest {
     @Test void appHasAGreeting() {
-        App classUnderTest = new App();
     }
 }
