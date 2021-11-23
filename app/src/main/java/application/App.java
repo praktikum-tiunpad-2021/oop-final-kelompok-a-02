@@ -25,7 +25,10 @@ public class App extends Application {
                 for (int j = 0; j < 4; j++) {
                     if(i==3 && j==3) continue;
                     Rectangle rectangle = new Rectangle(0,0,99,99);
+                    if((j+(i%2)) % 2 == 0)
                     rectangle.setFill(Color.AQUA);
+                    if((j+(i%2)) % 2 != 0)
+                    rectangle.setFill(Color.CRIMSON);
                     Text text = new Text(49,49, ""+(j+1+(4*i)));
                     StackPane blok = new StackPane();
                     blok.getChildren().add(rectangle);
