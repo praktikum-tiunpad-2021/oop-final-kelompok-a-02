@@ -1,12 +1,11 @@
 # Scrum Report (Sprint 1)
-| From dd/mm/yyyy to dd/mm/yyyy
+| From 21/11/2021 to 23/11/2021
 
-## Team (Insert your name)
+## Team
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Lorem Ipsum |
+| 140810200017  | M Keenan    |
+| 140810200029  | Adnan R M   |
 
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
@@ -17,7 +16,7 @@
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 1.1 | Pembuatan board dengan tampilan placeholder |  | DONE |
+| 1.1 | Pembuatan board dengan tampilan placeholder | Adnan R M | DONE |
 
 
 ## Next Sprint Backlog (Sprint 2)
