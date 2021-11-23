@@ -4,8 +4,8 @@
 ## Team (Insert your name)
 | NPM           | Name        |
 | ------------- |-------------|
-| 140810200017  | M.Keenan    |
-| 140810200029  | Adnan M     |
+| 140810200017  | M Keenan    |
+| 140810200029  | Adnan R M   |
 | 140810xx00xx  | Lorem Ipsum |
 
 ## Sprint Overview
@@ -17,8 +17,8 @@
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Preparing the x | Jane Doe | DONE |
-| 2.2 | Make the x | John Doe | FAILED |
+| 2.1 | Mengacak Ubin pad Board | Jane Doe | DONE |
+| 2.2 |  | John Doe | FAILED |
 
 ## Retrospective 
 
