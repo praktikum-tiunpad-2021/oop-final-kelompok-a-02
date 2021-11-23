@@ -6,19 +6,18 @@
 | ------------- |-------------|
 | 140810200017  | M Keenan    |
 | 140810200029  | Adnan R M   |
-| 140810xx00xx  | Lorem Ipsum |
 
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| n             | n             |
+| 2             | n             |
 
 ## Sprint 2 Backlog
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Mengacak Ubin pad Board | Jane Doe | DONE |
-| 2.2 |  | John Doe | FAILED |
+| 2.1 | Mengacak Ubin pada Board | Jane Doe | DONE |
+| 2.2 | Menggerakan Ubin | John Doe | FAILED |
 
 ## Retrospective 
 
