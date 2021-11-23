@@ -14,13 +14,12 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
 |               |             |
 
 ## Change log
-- **[Sprint Planning](changelog/sprint-planning.md) - (planning date)** 
-   - Short changes 1
-   - Short changes 2
+- **[Sprint Planning](changelog/sprint-planning.md) - (20 November)** 
+   - Eksplor tentang JavaFX untuk game
+   - Eksplor tentang game fifteen puzzle
 
-- **[Sprint 1](changelog/sprint-1.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
+- **[Sprint 1](changelog/sprint-1.md) - (21 - 23 November)** 
+   - Pembuatan board dengan tampilan placeholder
 
 - **[Sprint 2](changelog/sprint-2.md) - (date from x until x)** 
    - Short changes 1
