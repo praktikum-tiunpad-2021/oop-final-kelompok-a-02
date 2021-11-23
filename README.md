@@ -22,8 +22,8 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
    - Pembuatan board dengan tampilan placeholder
 
 - **[Sprint 2](changelog/sprint-2.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
+   - Mengacak Ubin
+   - Menggeser Ubin
    
 - **[Sprint 3](changelog/sprint-3.md) - (date from x until x)** 
    - Short changes 1
