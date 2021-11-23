@@ -22,5 +22,5 @@
 ## Next Sprint Backlog (Sprint 2)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 2.1 | Mengacak Kotak pada Board | Jane Doe | 
-| 2.2 | Menggerakan Kotak | John Doe | 
+| 2.1 | Mengacak Ubin pada Board | Jane Doe | 
+| 2.2 | Menggerakan Ubin | John Doe | 
