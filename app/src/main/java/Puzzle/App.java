@@ -28,9 +28,9 @@ public class App extends Application {
             Group root = new Group();
             Board.pixelSizeX = 500;
             Board.pixelSizeY = 500;
- 
+
             for (int i = 0; i < board.size*board.size; i++) {
-                System.out.println(board.tiles.get(i));
+                System.out.println(board.generationTileMap.get(i));
             }
             // ThreadLocalRandom.current().nextInt(origin, bound);
             // for (int i = 0; i < Board.size; i++) {
@@ -51,6 +51,7 @@ public class App extends Application {
                         board.shuffle();
                         board.generateTiles();System.out.println(board.isSolvable());
                         System.out.println(board.getInverseCount());
+                        board.refresh();
                     }
 				}
 			
@@ -64,7 +65,11 @@ public class App extends Application {
 	}
 	
 	public static void main(String[] args) {
-        Board.size = Integer.valueOf(args[0]);
+        try {
+            Board.size = Integer.valueOf(args[0]);
+        } catch (Exception e) {
+            System.out.println("Arguments not valid or not specified");
+        }
         Tile.textSize = 50;
         Tile.init();
 		launch(args);

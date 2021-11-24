@@ -16,12 +16,13 @@ import javafx.scene.text.Text;
 public class Tile extends StackPane{
     public static int pixelSizeX;
     public static int pixelSizeY;
-    public static Paint textColor = Color.CRIMSON;
+    public static Paint textColor1 = Color.GREEN;
+    public static Paint textColor0 = Color.CRIMSON;
     public static String textFont = "Verdanna";
     public static double textSize = 50;
     public static FontWeight textWeight = FontWeight.BOLD;
-    public static Paint color0 = Color.AQUA;
-    public static Paint color1 = Color.GRAY;
+    public static Paint color0 = Color.ORANGE;
+    public static Paint color1 = Color.LIGHTGRAY;
     private int number;
     private int posX;
     private int posY;
@@ -29,8 +30,20 @@ public class Tile extends StackPane{
     public static void init(){
         Tile.pixelSizeX = Board.pixelSizeX/Board.size;
         Tile.pixelSizeY = Board.pixelSizeY/Board.size;
+        Tile.textSize = Math.min(pixelSizeX, pixelSizeY) * 0.4;
     }
 
+    public Tile(int posX, int posY){
+        super();
+        this.posX = posX;
+        this.posY = posY;
+
+        Rectangle rectangle = new Rectangle(Tile.pixelSizeX-2,Tile.pixelSizeY-2);
+
+        this.getChildren().add(rectangle);
+        this.setLayoutX(this.posX*Tile.pixelSizeX);
+        this.setLayoutY(this.posY*Tile.pixelSizeY);
+    }
     public Tile(int number,int posX, int posY){
         super();
         this.number = number;
@@ -39,7 +52,7 @@ public class Tile extends StackPane{
 
         Text text = new Text("" + this.number);
         text.setFont(Font.font(Tile.textFont, Tile.textWeight, Tile.textSize));
-        text.setFill(Tile.textColor);
+        text.setFill(Tile.textColor1);
         Rectangle rectangle = new Rectangle(Tile.pixelSizeX-2,Tile.pixelSizeY-2);
         if((((this.number-1)/Board.size)%2+((this.number-1)%Board.size))%2 == 0){
             rectangle.setFill(Tile.color0);
@@ -54,11 +67,20 @@ public class Tile extends StackPane{
         this.setLayoutY(this.posY*Tile.pixelSizeY);
         
     }
+
+    public static Tile createInvisibleTile(int posX, int posY){
+        Tile tile = new Tile(posX,posY);
+        tile.setOpacity(0.0);
+        return tile;
+    }
     public int getPosX(){
         return this.posX;
     }
     public int getPosY(){
         return this.posY;
+    }
+    public int getIndex(){
+        return (this.posY*Board.size) + this.posX;
     }
     public int getNumber(){
         return this.number;
