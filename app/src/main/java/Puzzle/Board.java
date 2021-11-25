@@ -3,6 +3,7 @@ package Puzzle;
 import java.util.concurrent.ThreadLocalRandom;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
@@ -17,44 +18,77 @@ import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
 
 public class Board extends Group{
-    public static int size = 4;
-    public static int pixelSizeX = 400;
-    public static int pixelSizeY = 400;
-    public ArrayList<Integer> generationTileMap;
-    private static ArrayList<Integer> correctTileMap;
-    private ArrayList<Integer> movableIndexes;
 
-    private static int toX(int index){
+    public static EventHandler<MouseEvent> clickHandler = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent arg0) {
+            Tile tile = (Tile)arg0.getSource();
+            Tile zeroTile = tile.board.getZeroTile();
+            int zeroX = zeroTile.getPosX();
+            int zeroY = zeroTile.getPosY();
+            System.out.println(tile.board.isInPlace(tile));
+            if(tile.isMovable()){
+                zeroTile.moveTo(tile.getPosX(),tile.getPosY());
+                tile.moveTo(zeroX,zeroY);
+                tile.board.setMovableIndexes();
+                tile.board.update(tile);
+            }
+        }
+    };
+
+    public int size = 4;
+    public int pixelSizeX = 400;
+    public int pixelSizeY = 400;
+    public ArrayList<Integer> generationTileMap;
+    private ArrayList<Integer> correctTileMap;
+    public ArrayList<Integer> movableIndexes = new ArrayList<Integer>(4); // [top,right,bottom,left] (-1 = none)
+
+    private int toX(int index){
         return index%size;
     }
-    private static int toY(int index){
+    private int toY(int index){
         return index/size;
     }
-    private static int toIndex(int x, int y){
+    private int toIndex(int x, int y){
         return (y*size) + x;
     }
 
-    public Board(){
+    public Board(int size, int pixelSizeX, int pixelSizeY){
         super();
+        this.size = size;
+        this.pixelSizeX = pixelSizeX;
+        this.pixelSizeY = pixelSizeY;
         this.generationTileMap = new ArrayList<Integer>(size*size);   // fill generation with tile map with correct order
-        this.addTile(Tile.createInvisibleTile(0, 0),0); // create and add empty tile
+        this.getChildren().add(Tile.createInvisibleTile(this,size-1, size-1)); // create and add empty tile (number 0)
         for (int i = 1; i < size*size; i++) { // create remaining tile with correct order
-            Tile tile = new Tile(i,toX(i-1) , toY(i-1));
-            tile.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-                @Override
-				public void handle(MouseEvent arg0) {
-                    System.out.println(Board.isInPlace((Tile)arg0.getSource()));
-				}
-            });
-            this.addTile(tile,tile.getNumber());
+            Tile tile = new Tile(this,i,toX(i-1) , toY(i-1));
+            tile.addEventHandler(MouseEvent.MOUSE_CLICKED, clickHandler);
+            this.getChildren().add(tile);
+            this.generationTileMap.add(tile.getNumber());
         }
+        this.generationTileMap.add(0);
+        this.setMovableIndexes();
+        // movableIndexes = new ArrayList<Integer>(Arrays.asList(size*size-size-1,-1,-1,size*size-2));
         correctTileMap = (ArrayList<Integer>)this.generationTileMap.clone(); // The correct tile map
     }
-    public void addTile(Tile tile,int number){
-        this.getChildren().add(tile);
-        this.generationTileMap.add(number);
+    public Tile getZeroTile(){
+        Tile zeroTile = (Tile)this.getChildren().get(0);
+        return zeroTile;
     }
-
+    public void setMovableIndexes(){
+        this.movableIndexes = new ArrayList<Integer>(Arrays.asList(-1,-1,-1,-1));
+        Tile zeroTile = this.getZeroTile();
+        if(zeroTile.getPosY()-1 >= 0) this.movableIndexes.set(0,zeroTile.getIndex()-size);
+        if(zeroTile.getPosX()+1 < size) this.movableIndexes.set(1,zeroTile.getIndex()+1);
+        if(zeroTile.getPosY()+1 < size) this.movableIndexes.set(2,zeroTile.getIndex()+size);
+        if(zeroTile.getPosX()-1 >= 0) this.movableIndexes.set(3,zeroTile.getIndex()-1);
+    }
+    public void generateTiles(){ // move tiles' position based on generation tile map
+        for (int i = 0; i < size*size; i++) {
+            Tile tile = (Tile)(this.getChildren().get(this.generationTileMap.get(i)));
+            tile.moveTo(toX(i),toY(i));
+        }
+    }
     public void shuffle(){
         this.generationTileMap.clear();
         ArrayList<Integer> remains = new ArrayList<Integer>(); // numbers list
@@ -71,31 +105,28 @@ public class Board extends Group{
             this.generationTileMap.set(this.generationTileMap.indexOf(2),1);
             this.generationTileMap.set(this.generationTileMap.indexOf(-1),2);
         }
+        generateTiles();
+        this.setMovableIndexes();
     }
-    public void refresh(){
-        for (int i = 1; i < size*size; i++) {
-            Tile tile = (Tile)this.getChildren().get(i);
-            if(isInPlace(tile)){
-                ((Text)tile.getChildren().get(1)).setFill(Tile.textColor1);
-            }
-            else{
-                ((Text)tile.getChildren().get(1)).setFill(Tile.textColor0);
-            }
+    public void update(Tile tile){
+        if(isInPlace(tile)){
+            ((Text)tile.getChildren().get(1)).setFill(Tile.textColor1);
+        }
+        else{
+            ((Text)tile.getChildren().get(1)).setFill(Tile.textColor0);
         }
     }
-    public static boolean isInPlace(Tile tile){
-        if(tile.getNumber() == correctTileMap.get(tile.getIndex())){
+    public void update(){
+        for (int i = 1; i < size*size; i++) {
+            Tile tile = (Tile)this.getChildren().get(i);
+            update(tile);
+        }
+    }
+    public boolean isInPlace(Tile tile){
+        if(tile.getNumber() == this.correctTileMap.get(tile.getIndex())){
             return true;
         }
         return false;
-    }
-
-    public void generateTiles(){ // move tiles' position based on generation tile map
-        for (int i = 0; i < size*size; i++) {
-            if(this.generationTileMap.get(i) == 0) continue;
-            Tile tile = (Tile)(this.getChildren().get(this.generationTileMap.get(i)));
-            tile.moveTo(toX(i),toY(i));
-        }
     }
     public int getInverseCount(){
         int inverseCount = 0;

@@ -21,13 +21,15 @@ import javafx.scene.text.Text;
 
 
 public class App extends Application {
+    private static int size = 4;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-            Board board = new Board();
+            Board board = new Board(size,400,400);
+            Board board2 = new Board(4,400,400);
+            board2.setLayoutY(401);
             Group root = new Group();
-            Board.pixelSizeX = 500;
-            Board.pixelSizeY = 500;
+            root.getChildren().addAll(board,board2);
 
             for (int i = 0; i < board.size*board.size; i++) {
                 System.out.println(board.generationTileMap.get(i));
@@ -41,7 +43,7 @@ public class App extends Application {
             //     }
             // }
             // root.getChildren().add(board);
-			Scene scene = new Scene(board);
+			Scene scene = new Scene(root);
             scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
 
 				@Override
@@ -49,9 +51,12 @@ public class App extends Application {
 					System.out.println(arg0.getCode() + ", is alt : " + arg0.isAltDown());
 					if(arg0.getCode() ==  KeyCode.R){
                         board.shuffle();
-                        board.generateTiles();System.out.println(board.isSolvable());
-                        System.out.println(board.getInverseCount());
-                        board.refresh();
+                        System.out.println(board.isSolvable());
+                        System.out.println("zero index = "+((Tile)board.getChildren().get(0)).getIndex());
+                        board.update();
+                        for (int i = 0; i < 4; i++) {
+                            System.out.println(board.movableIndexes.get(i));
+                        }
                     }
 				}
 			
@@ -66,12 +71,10 @@ public class App extends Application {
 	
 	public static void main(String[] args) {
         try {
-            Board.size = Integer.valueOf(args[0]);
+            size = Integer.valueOf(args[0]);
         } catch (Exception e) {
             System.out.println("Arguments not valid or not specified");
         }
-        Tile.textSize = 50;
-        Tile.init();
 		launch(args);
 	}
 }
