@@ -10,14 +10,14 @@
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| n             | n             |
+| 2             | n             |
 
 ## Sprint 3 Backlog
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 3.1 | Preparing the x | Jane Doe | DONE |
-| 3.2 | Make the x | John Doe | FAILED |
+| 3.1 | Implementasi Animasi Pergerakan Tile | Adnan R M|  - |
+| 3.2 | Perubahan UI (menambah button-button) | M Keenan |  - |
 
 ## Retrospective 
 
