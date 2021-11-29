@@ -18,9 +18,9 @@
 | --- | ---------- | ------- | ------ |
 | 1.1 | Pembuatan board dengan tampilan placeholder | Adnan R M | DONE |
 
-
 ## Next Sprint Backlog (Sprint 2)
-| ID  | Title/Desc | Asignee |
-| --- | ---------- | ------- |
-| 2.1 | Mengacak Ubin     | Adnan R M |
-| 2.2 | Menggerakan Ubin | M Keenan   |
+
+| ID  | Title/Desc | Asignee | Status |
+| --- | ---------- | ------- | ------ |
+| 2.1 | Implementasi Shuffle| Adnan R M |
+| 2.2 | Implementasi Pergerakan Tile | M Keenan   |
