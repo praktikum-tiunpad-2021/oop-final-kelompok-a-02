@@ -23,8 +23,8 @@
 | 1.1 | Pembuatan board dengan tampilan placeholder | Adnan R M |
 
 ## Sprint Backlog Plan (Sprint 2)
-| ID  | Title/Desc | Asignee | Status |
-| --- | ---------- | ------- | ------ |
+| ID  | Title/Desc | Asignee |
+| --- | ---------- | ------- |
 | 2.1 | Implementasi Shuffle| Adnan R M |
 | 2.2 | Implementasi Pergerakan Tile | M Keenan   |
 
