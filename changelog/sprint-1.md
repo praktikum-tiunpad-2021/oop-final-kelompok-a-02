@@ -1,7 +1,7 @@
 # Scrum Report (Sprint 1)
 | From 21/11/2021 to 23/11/2021
 
-## Team
+## Team (02)
 | NPM           | Name        |
 | ------------- |-------------|
 | 140810200017  | M Keenan    |
