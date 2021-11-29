@@ -1,5 +1,5 @@
 # Sprint Planning 
-| 19/11/2021
+| 20/11/2021
 
 ### Team (02)
 | NPM           | Name        |
@@ -16,6 +16,12 @@
 | 2.2 | Implementasi Pergerakan Tile | M Keenan   |
 | 3.1 | Implementasi Animasi Pergerakan Tile | Adnan R M| 
 | 3.2 | Perubahan UI (menambah button-button) | M Keenan | 
+
+## Sprint Backlog Plan (Sprint Planning)
+| ID  | Title/Desc | Asignee |
+| --- | ---------- | ------- |
+| 0.1 | Eksplor tentang JavaFX untuk game| All |
+| 0.2 | Eksplor tentang game fifteen puzzle | All |
 
 ## Sprint Backlog Plan (Sprint 1)
 | ID  | Title/Desc | Asignee | 
