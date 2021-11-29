@@ -1,5 +1,5 @@
 # Scrum Report (Sprint 2)
-| From dd/mm/yyyy to dd/mm/yyyy
+| From 27/11/2021 to 29/11/2021
 
 ## Team (Insert your name)
 | NPM           | Name        |
@@ -10,14 +10,14 @@
 ## Sprint Overview
 | Planned (n)   | Completed (n) |
 | ------------- |-------------- |
-| 2             | n             |
+| 2             | 2             |
 
 ## Sprint 2 Backlog
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Mengacak Ubin pada Board | Jane Doe | DONE |
-| 2.2 | Menggerakan Ubin | John Doe | FAILED |
+| 2.1 | Mengacak Ubin     | Adnan R M | DONE |
+| 2.2 | Menggerakan Ubin | M Keenan   | DONE |
 
 ## Retrospective 
 
