@@ -16,8 +16,8 @@
 
 | ID  | Title/Desc | Asignee | Status |
 | --- | ---------- | ------- | ------ |
-| 2.1 | Mengacak Ubin     | Adnan R M | DONE |
-| 2.2 | Menggerakan Ubin | M Keenan   | DONE |
+| 2.1 | Implementasi Shuffle| Adnan R M | DONE |
+| 2.2 | Implementasi Pergerakan Tile | M Keenan   | DONE |
 
 ## Retrospective 
 
@@ -26,5 +26,5 @@ Sprint kemarin dianggap terlalu sedikit sehingga diperlukan adanya penyesuaian t
 ## Next Sprint Backlog (Sprint 3)
 | ID  | Title/Desc | Asignee | 
 | --- | ---------- | ------- | 
-| 3.1 | Preparing the x | Jane Doe | 
-| 3.2 | Make the x | John Doe | 
+| 3.1 | Implementasi Animasi Pergerakan Tile | Adnan R M| 
+| 3.2 | Perubahan UI (menambah button-button) | M Keenan | 
