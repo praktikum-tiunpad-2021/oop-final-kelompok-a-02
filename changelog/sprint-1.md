@@ -20,7 +20,7 @@
 
 
 ## Next Sprint Backlog (Sprint 2)
-| ID  | Title/Desc | Asignee | 
-| --- | ---------- | ------- | 
-| 2.1 | Mengacak Ubin pada Board | Jane Doe | 
-| 2.2 | Menggerakan Ubin | John Doe | 
+| ID  | Title/Desc | Asignee |
+| --- | ---------- | ------- |
+| 2.1 | Mengacak Ubin     | Adnan R M |
+| 2.2 | Menggerakan Ubin | M Keenan   |
