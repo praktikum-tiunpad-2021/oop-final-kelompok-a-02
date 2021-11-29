@@ -1,4 +1,4 @@
-# Project Name
+# Fifteen Puzzle
 
 This repository is a final project (Java GUI) from Object-Oriented Programming Class, Teknik Informatika Universitas Padjadjaran. 
 
@@ -21,13 +21,13 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
 - **[Sprint 1](changelog/sprint-1.md) - (21 - 23 November)** 
    - Pembuatan board dengan tampilan placeholder
 
-- **[Sprint 2](changelog/sprint-2.md) - (date from x until x)** 
-   - Mengacak Ubin
-   - Menggeser Ubin
+- **[Sprint 2](changelog/sprint-2.md) - (27 - 29 November)** 
+   - Implementasi Shuffle
+   - Implementasi Pergerakan Tile
    
 - **[Sprint 3](changelog/sprint-3.md) - (date from x until x)** 
-   - Short changes 1
-   - Short changes 2
+   - Implementasi Animasi Pergerakan Tile
+   - Perubahan UI (menambah button-button)
 
 ## Running The App
 
