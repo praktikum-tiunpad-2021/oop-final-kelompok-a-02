@@ -20,7 +20,8 @@ public class Tile extends StackPane{
     public static Paint textColor1 = Color.GREEN;
     public static Paint textColor0 = Color.CRIMSON;
     public static String textFont = "Verdanna";
-    public double textSize = 50;
+    public static double textSize = 0.4;
+    public double pixelTextSize;
     public static FontWeight textWeight = FontWeight.BOLD;
     public static Paint color0 = Color.ORANGE;
     public static Paint color1 = Color.LIGHTGRAY;
@@ -32,7 +33,7 @@ public class Tile extends StackPane{
     public void resize(){
         this.pixelSizeX = this.board.pixelSizeX/this.board.size;
         this.pixelSizeY = this.board.pixelSizeY/this.board.size;
-        this.textSize = Math.min(pixelSizeX, pixelSizeY) * 0.4;
+        this.pixelTextSize = Math.min(pixelSizeX, pixelSizeY) * textSize;
     }
     public void init(Board board,int posX, int posY){
         this.board = board;
@@ -58,7 +59,7 @@ public class Tile extends StackPane{
         this.number = number;
 
         Text text = new Text("" + this.number);
-        text.setFont(Font.font(Tile.textFont, Tile.textWeight, this.textSize));
+        text.setFont(Font.font(Tile.textFont, Tile.textWeight, this.pixelTextSize));
         text.setFill(Tile.textColor1);
         Rectangle rectangle = new Rectangle(this.pixelSizeX-2,this.pixelSizeY-2);
         if((((this.number-1)/this.board.size)%2+((this.number-1)%this.board.size))%2 == 0){

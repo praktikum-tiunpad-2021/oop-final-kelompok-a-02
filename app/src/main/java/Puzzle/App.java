@@ -25,11 +25,12 @@ public class App extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+            Tile.textSize = 0.5;
             Board board = new Board(size,400,400);
-            Board board2 = new Board(4,400,400);
-            board2.setLayoutY(401);
+            // Board board2 = new Board(4,400,400);
+            // board2.setLayoutY(401);
             Group root = new Group();
-            root.getChildren().addAll(board,board2);
+            root.getChildren().addAll(board);
 
             for (int i = 0; i < board.size*board.size; i++) {
                 System.out.println(board.generationTileMap.get(i));
