@@ -27,16 +27,20 @@ public class Board extends Group{
             int zeroX = zeroTile.getPosX();
             int zeroY = zeroTile.getPosY();
             System.out.println(tile.board.isInPlace(tile));
-            if(tile.isMovable()){
+            if(tile.isMovable() && !GameController.isPaused()){
                 zeroTile.moveTo(tile.getPosX(),tile.getPosY());
                 tile.moveTo(zeroX,zeroY);
                 tile.board.setMovableIndexes();
+                System.out.println("is Solved : " + tile.board.isSolved());
                 tile.board.update(tile);
+                if(tile.board.isSolved()){
+                    GameController.showWonDialog();
+                }
             }
         }
     };
-
     public int size = 4;
+    public int gap = 4;
     public int pixelSizeX = 400;
     public int pixelSizeY = 400;
     public ArrayList<Integer> generationTileMap;
@@ -107,6 +111,7 @@ public class Board extends Group{
         }
         generateTiles();
         this.setMovableIndexes();
+        this.update();
     }
     public void update(Tile tile){
         if(isInPlace(tile)){
@@ -155,5 +160,12 @@ public class Board extends Group{
             }
         }
         return false;
+    }
+    public boolean isSolved(){
+        for (int i = 1; i < size*size; i++) {
+            Tile tile = (Tile)this.getChildren().get(i);
+            if(tile.getIndex()+1 != tile.getNumber()) return false;
+        }
+        return true;
     }
 }

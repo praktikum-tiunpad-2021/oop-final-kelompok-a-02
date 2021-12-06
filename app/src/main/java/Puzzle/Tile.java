@@ -3,6 +3,8 @@ package Puzzle;
 import javax.naming.ldap.Rdn;
 import javax.swing.JSpinner.NumberEditor;
 
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.Border;
@@ -13,6 +15,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class Tile extends StackPane{
     public int pixelSizeX;
@@ -25,6 +28,8 @@ public class Tile extends StackPane{
     public static FontWeight textWeight = FontWeight.BOLD;
     public static Paint color0 = Color.ORANGE;
     public static Paint color1 = Color.LIGHTGRAY;
+    public static Duration transitionDuration = Duration.millis(200);
+    private TranslateTransition transition;
     private int number;
     private int posX;
     private int posY;
@@ -42,14 +47,15 @@ public class Tile extends StackPane{
         this.resize();
         this.setLayoutX(this.posX*this.pixelSizeX);
         this.setLayoutY(this.posY*this.pixelSizeY);
+        this.transition = new TranslateTransition(transitionDuration,this);
+        this.transition.setInterpolator(Interpolator.EASE_IN);
     }
 
     public Tile(Board board,int posX, int posY){
         super();
         this.init(board,posX,posY);
 
-        Rectangle rectangle = new Rectangle(this.pixelSizeX-2,this.pixelSizeY-2);
-
+        Rectangle rectangle = new Rectangle(this.pixelSizeX-board.gap,this.pixelSizeY-board.gap);
         this.getChildren().add(rectangle);
     }
     
@@ -61,7 +67,9 @@ public class Tile extends StackPane{
         Text text = new Text("" + this.number);
         text.setFont(Font.font(Tile.textFont, Tile.textWeight, this.pixelTextSize));
         text.setFill(Tile.textColor1);
-        Rectangle rectangle = new Rectangle(this.pixelSizeX-2,this.pixelSizeY-2);
+        text.setX(text.getX()-board.gap);
+        text.setY(text.getX()-board.gap);
+        Rectangle rectangle = new Rectangle(this.pixelSizeX-board.gap,this.pixelSizeY-board.gap);
         if((((this.number-1)/this.board.size)%2+((this.number-1)%this.board.size))%2 == 0){
             rectangle.setFill(Tile.color0);
         }
@@ -96,9 +104,17 @@ public class Tile extends StackPane{
     }
 
     public void moveTo(int x, int y){
+        System.out.println("from = "+(int)this.getBoundsInParent().getMinX()+", "+(int)this.getBoundsInParent().getMinY());
+        this.transition.stop();
+        double offsetX = x* this.pixelSizeX - this.getBoundsInParent().getMinX();
+        double offsetY = y* this.pixelSizeY - this.getBoundsInParent().getMinY();
+        System.out.println(" offset = "+offsetX+" ,"+offsetY);
+        this.transition.setByX(offsetX);
+        this.transition.setByY(offsetY);
+        
         this.posX = x;
         this.posY = y;
-        this.relocate(this.posX*this.pixelSizeX, this.posY*this.pixelSizeY);
 
+        this.transition.play();
     }
 }
