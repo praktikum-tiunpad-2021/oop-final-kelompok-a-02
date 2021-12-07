@@ -65,6 +65,7 @@ public class App extends Application {
             Tile.textColor1 = Color.valueOf(prop.getProperty("textColor1"));
             Tile.textFont = prop.getProperty("textFont");
             Tile.textWeight = FontWeight.valueOf(prop.getProperty("FontWeight"));
+            size = Integer.parseInt(prop.getProperty("puzzleSize"));
             Tile.gap = Integer.parseInt(prop.getProperty("tileGap"));
             Tile.textSize = Double.parseDouble(prop.getProperty("tileTextSize"));
             Tile.transitionDuration = Duration.millis(Double.parseDouble(prop.getProperty("transitionDuration")));
