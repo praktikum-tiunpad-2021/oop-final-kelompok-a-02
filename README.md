@@ -158,4 +158,8 @@ Class yang merupakan controller untuk mengkontrol game atau board puzzle
 
 ## Notable Assumption and Design App Details
 
-TO;DO
+- Ukuran puzzle dan window game dapat diatur dan akan otomatis akan menyesuaikan ukuran-ukuran lainnya
+- Warna-warna tile, dan gap antar tile dapat diatur
+- Shuffle terus-terusan dengan menekan tombol R
+- Kecepatan perpindahan tile dapat diatur
+- Saat game selesai, akan muncul popup dan bisa close atau shuffle lagi
