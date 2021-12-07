@@ -39,6 +39,7 @@
 | --- | ---------- | ------- | 
 | 3.1 | Implementasi Animasi Pergerakan Tile | Adnan R M| 
 | 3.2 | Perubahan UI (menambah button-button) | M Keenan | 
+| 3.3 |	Penambahan Class GameController	| Adnan R M	|
 
 ## Retrospective 
 
