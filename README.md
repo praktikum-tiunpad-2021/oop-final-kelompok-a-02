@@ -65,7 +65,7 @@ Class yang memiliki fungsi main() yang digunakan dalam proses run
    - **width** - panjang window game
    - **height** - lebar window game
 - Methods (2)
-   - **main** - inisiasi **size** berdasarkan argumen launch
+   - **main** - inisiasi **size** berdasarkan argumen launch dan config file
    - **start** - inisiasi board, stage dan GameController
    
 ``` 
@@ -154,7 +154,8 @@ Class yang merupakan controller untuk mengkontrol game atau board puzzle
    - **handleShuffleBtn** - fungsi untuk handle **shuffleBtn**
 
 
-![image](https://user-images.githubusercontent.com/57803800/144958005-8a31398c-e91b-4c19-9fb7-aa6bc67da144.png)
+![image](https://user-images.githubusercontent.com/57803800/144962951-e15dadfa-868c-443d-a983-5c9e16c76054.png)
+
 
 ## Notable Assumption and Design App Details
 
