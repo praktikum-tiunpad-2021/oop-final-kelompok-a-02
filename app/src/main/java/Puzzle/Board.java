@@ -4,17 +4,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
 
 public class Board extends Group{

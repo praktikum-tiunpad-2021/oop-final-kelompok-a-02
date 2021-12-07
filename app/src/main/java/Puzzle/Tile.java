@@ -1,13 +1,7 @@
 package Puzzle;
 
-import javax.naming.ldap.Rdn;
-import javax.swing.JSpinner.NumberEditor;
-
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -15,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
 public class Tile extends StackPane{
@@ -23,7 +18,7 @@ public class Tile extends StackPane{
     public static Paint textColor1 = Color.GREEN;
     public static Paint textColor0 = Color.CRIMSON;
     public static String textFont = "Verdanna";
-    public static double textSize = 0.4;
+    public static double textSize = 0.5;
     public double pixelTextSize;
     public static FontWeight textWeight = FontWeight.BOLD;
     public static Paint color0 = Color.ORANGE;
@@ -56,6 +51,7 @@ public class Tile extends StackPane{
         this.init(board,posX,posY);
 
         Rectangle rectangle = new Rectangle(this.pixelSizeX-board.gap,this.pixelSizeY-board.gap);
+        rectangle.setVisible(false);
         this.getChildren().add(rectangle);
     }
     
@@ -83,7 +79,14 @@ public class Tile extends StackPane{
 
     public static Tile createInvisibleTile(Board board,int posX, int posY){
         Tile tile = new Tile(board,posX,posY);
-        tile.setOpacity(0.0);
+        Text text = new Text("Press\nR");
+        text.setFont(Font.font(Tile.textFont, Tile.textWeight, tile.pixelTextSize*0.5));
+        text.setFill(textColor0);
+        text.setTextAlignment(TextAlignment.CENTER);
+        text.setX(text.getX()-board.gap);
+        text.setY(text.getX()-board.gap);
+        tile.getChildren().add(text);
+    
         return tile;
     }
     public boolean isMovable(){
