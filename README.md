@@ -25,7 +25,7 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
    - Implementasi Shuffle
    - Implementasi Pergerakan Tile
    
-- **[Sprint 3](changelog/sprint-3.md) - (date from x until x)** 
+- **[Sprint 3](changelog/sprint-3.md) - (3 - 6 November)** 
    - Implementasi Animasi Pergerakan Tile
    - Perubahan UI (menambah button-button)
 
