@@ -15,6 +15,7 @@ import javafx.util.Duration;
 public class Tile extends StackPane{
     public int pixelSizeX;
     public int pixelSizeY;
+    public static int gap = 4;
     public static Paint textColor1 = Color.GREEN;
     public static Paint textColor0 = Color.CRIMSON;
     public static String textFont = "Verdanna";
@@ -50,7 +51,7 @@ public class Tile extends StackPane{
         super();
         this.init(board,posX,posY);
 
-        Rectangle rectangle = new Rectangle(this.pixelSizeX-board.gap,this.pixelSizeY-board.gap);
+        Rectangle rectangle = new Rectangle(this.pixelSizeX-gap,this.pixelSizeY-gap);
         rectangle.setVisible(false);
         this.getChildren().add(rectangle);
     }
@@ -63,9 +64,9 @@ public class Tile extends StackPane{
         Text text = new Text("" + this.number);
         text.setFont(Font.font(Tile.textFont, Tile.textWeight, this.pixelTextSize));
         text.setFill(Tile.textColor1);
-        text.setX(text.getX()-board.gap);
-        text.setY(text.getX()-board.gap);
-        Rectangle rectangle = new Rectangle(this.pixelSizeX-board.gap,this.pixelSizeY-board.gap);
+        text.setX(text.getX()-gap);
+        text.setY(text.getX()-gap);
+        Rectangle rectangle = new Rectangle(this.pixelSizeX-gap,this.pixelSizeY-gap);
         if((((this.number-1)/this.board.size)%2+((this.number-1)%this.board.size))%2 == 0){
             rectangle.setFill(Tile.color0);
         }
@@ -83,8 +84,8 @@ public class Tile extends StackPane{
         text.setFont(Font.font(Tile.textFont, Tile.textWeight, tile.pixelTextSize*0.5));
         text.setFill(textColor0);
         text.setTextAlignment(TextAlignment.CENTER);
-        text.setX(text.getX()-board.gap);
-        text.setY(text.getX()-board.gap);
+        text.setX(text.getX()-gap);
+        text.setY(text.getX()-gap);
         tile.getChildren().add(text);
     
         return tile;

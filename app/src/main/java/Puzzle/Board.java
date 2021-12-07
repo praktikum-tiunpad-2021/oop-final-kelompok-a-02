@@ -31,8 +31,8 @@ public class Board extends Group{
             }
         }
     };
+    public static int gap = 4;
     public int size = 4;
-    public int gap = 4;
     public int pixelSizeX = 400;
     public int pixelSizeY = 400;
     public ArrayList<Integer> generationTileMap;

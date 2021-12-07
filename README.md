@@ -72,10 +72,9 @@ Class yang memiliki fungsi main() yang digunakan dalam proses run
 Board.java
 ```
 Class yang merupakan board untuk puzzle, berisi tiles, dan konfigurasi-konfigurasi nya
-- Variables (8)
+- Variables (7)
    - **clickHandler** - handler untuk click mouse pada tile
    - **size** - ukuran board puzzle (n x n)
-   - **gap** - besar gap antar tile
    - **pixelSizeX** - panjang board dalam pixel
    - **pixelSizeY** - lebar board dalam pixel
    - **generationTileMap** - tile map berupa array dua dimensi yang digunakan untuk shuffle
@@ -99,9 +98,10 @@ Class yang merupakan board untuk puzzle, berisi tiles, dan konfigurasi-konfigura
 Tile.java
 ```
 Class yang merupakan tile untuk puzzle dan konfigurasi-konfigurasi nya
-- Variables (16)
+- Variables (17)
    - **pixelSizeX** - panjang tile dalam pixel
    - **pixelSizeY** - lebar tile dalam pixel
+   - **gap** - besar gap antar tile
    - **textColor1** - warna text saat posisi sesuai
    - **textColor0** - warna text saat posisi tidak sesuai
    - **textFont** - font family text
