@@ -67,6 +67,7 @@ Class yang memiliki fungsi main() yang digunakan dalam proses run
 - Methods (2)
    - **main** - inisiasi **size** berdasarkan argumen launch
    - **start** - inisiasi board, stage dan GameController
+   
 ``` 
 Board.java
 ```
@@ -93,6 +94,7 @@ Class yang merupakan board untuk puzzle, berisi tiles, dan konfigurasi-konfigura
    - **getInverseCount** - return jumlah inverse pada **generationTileMap**
    - **isSolvable** - return apakah **generationTileMap** solvable
    - **isSolved** - return apkan semua tile sudah sesuai dengan **correctTileMap**
+   
 ``` 
 Tile.java
 ```
@@ -125,6 +127,7 @@ Class yang merupakan tile untuk puzzle dan konfigurasi-konfigurasi nya
    - **getIndex** - return index tile dalam board
    - **getNumber** - return angka tile
    - **moveTo** - pindah kan tile ke posisi dalam board yang ditentukan
+   
 ``` 
 GameController.java
 ```
@@ -134,10 +137,11 @@ Class yang merupakan controller untuk mengkontrol game atau board puzzle
    - **scene** - referensi ke scene yang digunakan
    - **stage** - stage yang digunakan oleh controller untuk dialog
    - **pause** - state pause game
-- Method (3)
+- Methods (3)
    - **set** - inisiasi GameController
    - **showWonDialog** - muculkan dialog saat game selesai atau menang
    - **isPaused** - return state pause game
+   
 ``` 
 DialogController.java
 ```
@@ -145,7 +149,7 @@ Class yang merupakan controller untuk mengkontrol game atau board puzzle
 - Variables (2)
    - **closeBtn** - tombol close
    - **shuffleBtn** - tombol untuk close lalu shuffle
-- Method (2)
+- Methods (2)
    - **handleCloseBtn** - fungsi untuk handle **closeBtn**
    - **handleShuffleBtn** - fungsi untuk handle **shuffleBtn**
 
