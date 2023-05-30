@@ -33,6 +33,12 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
 
 ## Running The App
 
+1. Download from release
+
+2. Open bin/Puzzle.bat (windows) or bin/Puzzle (unix)
+
+OR
+
 1. Buka Command Prompt dalam Root Folder Project
 
 2.1. Menjalankan game dengan ukuran 4x4 (default)
