@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
-
-import org.checkerframework.common.reflection.qual.GetClass;
+import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -24,6 +23,7 @@ public class App extends Application {
     private static int size = 4;
     private static int width = 400;
     private static int height = 400;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -55,8 +55,16 @@ public class App extends Application {
         try {
             Properties prop = new Properties();
             App app = new App();
-            InputStream fis = app.getClass().getResource("/puzzle.config").openStream();
-            prop.load(fis);
+			File configFile = new File("../puzzle.config");
+            try (InputStream fis = new FileInputStream(configFile)) {
+				// Use the inputStream as needed
+				// ...
+				prop.load(fis);
+			} catch (IOException e) {
+				// Handle any exceptions that occur during file operations
+				e.printStackTrace();
+			}
+            
             height = Integer.parseInt(prop.getProperty("windowHeight"));
             width = Integer.parseInt(prop.getProperty("windowWidth"));
             Tile.color0 = Color.valueOf(prop.getProperty("tileColor0"));
