@@ -12,6 +12,15 @@ Projek membuat game Fifteen Puzzle menggunakan OOP Java
 | 140810200017  | M Keenan    |
 | 140810200029  | Adnan R M   |
 |               |             |
+## Screenshots
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/eb46fe42-16d8-433d-879f-ecac6e6f1dcd)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/312b217e-5462-44e5-9591-36569e843110)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/0c2881e6-cd19-461a-b0ee-d36720e408ad)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/66c5c30b-8b66-4e41-b016-a8e877e79eae)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/1d264685-29f3-4485-b3a9-5c6549e76f29)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/79bb97c6-b0e7-4d7a-a341-98e6c8351173)
+![image](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/assets/57803800/a5656115-d711-43bf-9c58-706ad57d6866)
+
 
 ## Change log
 - **[Sprint Planning](changelog/sprint-planning.md) - (20 November)** 
