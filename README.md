@@ -1,5 +1,9 @@
 # Fifteen Puzzle - [Download Release](https://github.com/praktikum-tiunpad-2021/oop-final-kelompok-a-02/releases/tag/1)
 
+![image](documents/videos/4.gif)
+![image](documents/videos/10.gif)
+![image](documents/videos/100.gif)
+
 This repository is a final project (Java GUI) from Object-Oriented Programming Class, Teknik Informatika Universitas Padjadjaran. 
 
 [Challenge Guidelines](challenge-guideline.md)
